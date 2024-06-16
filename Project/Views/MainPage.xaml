@@ -1,0 +1,61 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Project.ViewModels"
+             x:Class="Project.Views.MainPage"
+             Title="Movie Details">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <!-- Logo -->
+            <Image Source="logo.png"
+                   HeightRequest="150"
+                   HorizontalOptions="Center" />
+
+            <!-- Welcome Message -->
+            <Label Text="Welcome to the Movie Info App"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <!-- Instruction Message -->
+            <Label Text="Get information about your favorite movies. Just enter the movie title below and tap the button."
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <!-- Movie Title Entry -->
+            <Entry Placeholder="Enter movie title"
+                   Text="{Binding MovieTitle}"
+                   FontSize="18"
+                   Margin="0,20,0,0"
+                   HorizontalOptions="FillAndExpand" />
+
+            <!-- Get Movie Details Button -->
+            <Button Text="Get Movie Details"
+                    Command="{Binding GetMovieDetailsCommand}"
+                    FontSize="18"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    CornerRadius="10"
+                    Padding="10"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+
+            <!-- Movie Details Label -->
+            <Label Text="{Binding MovieDetails}"
+                   FontSize="18"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="0,20,0,0" />
+
+            <!-- Movie Poster -->
+            <Image Source="{Binding MoviePosterUrl}"
+                   HeightRequest="400"
+                   WidthRequest="300"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="0,20,0,0" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
